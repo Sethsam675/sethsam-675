@@ -599,6 +599,19 @@ main a:not(.button) {
   margin: 0;
 }
 
+.section-link {
+  display: inline-block;
+  margin-top: 0.75rem;
+  color: var(--accent-dark);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.section-link:hover,
+.section-link:focus-visible {
+  text-decoration: underline;
+}
+
 .gallery-page .gallery-section {
   background: var(--panel);
 }
