@@ -966,3 +966,141 @@ main a:not(.button) {
     grid-template-columns: 1fr;
   }
 }
+
+/* Landing page: dark liquid-glass presentation */
+.landing-page-body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 7% 28%, rgba(234, 88, 12, 0.3), transparent 34%),
+    radial-gradient(circle at 88% 18%, rgba(30, 157, 180, 0.3), transparent 37%),
+    radial-gradient(circle at 58% 92%, rgba(60, 91, 190, 0.24), transparent 42%),
+    #071426;
+  color: #fff;
+}
+
+.landing-page-body::before {
+  background: rgba(1, 10, 24, 0.18);
+}
+
+.landing-page-body header {
+  background: rgba(5, 20, 39, 0.56);
+  border-bottom-color: rgba(255, 255, 255, 0.12);
+}
+
+.landing-page {
+  max-width: 1240px;
+  padding: clamp(1.25rem, 4vw, 3.5rem);
+  background: transparent;
+}
+
+.landing-page .hero {
+  position: relative;
+  min-height: min(680px, calc(100vh - 190px));
+  grid-template-columns: minmax(0, 1.5fr) minmax(220px, 0.7fr);
+  align-items: center;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.14);
+}
+
+.landing-page .hero::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: linear-gradient(125deg, rgba(255, 255, 255, 0.14), transparent 38%, rgba(255, 255, 255, 0.04));
+  pointer-events: none;
+}
+
+@supports ((backdrop-filter: blur(20px)) or (-webkit-backdrop-filter: blur(20px))) {
+  .landing-page .hero {
+    -webkit-backdrop-filter: blur(20px) saturate(120%);
+    backdrop-filter: blur(20px) saturate(120%);
+  }
+}
+
+@supports not ((backdrop-filter: blur(20px)) or (-webkit-backdrop-filter: blur(20px))) {
+  .landing-page .hero {
+    background: #132943;
+  }
+}
+
+.landing-page .hero-copy,
+.landing-page .hero-meta {
+  position: relative;
+  z-index: 1;
+}
+
+.landing-page .hero h2 {
+  color: #fff;
+  text-shadow: 0 3px 28px rgba(0, 0, 0, 0.22);
+}
+
+.landing-page .hero .eyebrow {
+  color: #ffb28a;
+}
+
+.landing-page .hero .lead,
+.landing-page .hero .response-note {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.landing-page .hero-meta {
+  padding: 1.35rem;
+  border-left: 1px solid rgba(255, 255, 255, 0.55);
+  color: rgba(255, 255, 255, 0.88);
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.22);
+}
+
+.landing-page .button-secondary {
+  border-color: rgba(255, 255, 255, 0.24);
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+.landing-page .button-secondary:hover,
+.landing-page .button-secondary:focus-visible {
+  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.landing-page .button-primary {
+  background: #ea580c;
+  box-shadow: 0 12px 28px rgba(234, 88, 12, 0.34);
+}
+
+.landing-page .button-primary:hover,
+.landing-page .button-primary:focus-visible {
+  background: #f97316;
+  box-shadow: 0 14px 34px rgba(234, 88, 12, 0.46);
+}
+
+.landing-page .intro-band,
+.landing-page .feature-grid,
+.landing-page #projects,
+.landing-page #gallery,
+.landing-page #designs {
+  border-color: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+@media (max-width: 800px) {
+  .landing-page {
+    padding: 1rem;
+  }
+
+  .landing-page .hero {
+    min-height: auto;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .landing-page .hero-meta {
+    border-top: 1px solid rgba(255, 255, 255, 0.35);
+    border-left: 0;
+  }
+}
