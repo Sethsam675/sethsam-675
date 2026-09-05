@@ -1104,3 +1104,138 @@ main a:not(.button) {
     border-left: 0;
   }
 }
+
+/* Shared dark liquid-glass theme for the inner portfolio pages */
+.site-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 8% 22%, rgba(234, 88, 12, 0.22), transparent 34%),
+    radial-gradient(circle at 90% 12%, rgba(30, 157, 180, 0.22), transparent 36%),
+    radial-gradient(circle at 54% 92%, rgba(60, 91, 190, 0.2), transparent 42%),
+    #071426;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.site-page::before {
+  background: rgba(1, 10, 24, 0.16);
+}
+
+.site-page header {
+  background: rgba(5, 20, 39, 0.62);
+  border-bottom-color: rgba(255, 255, 255, 0.12);
+}
+
+.site-page main {
+  max-width: 1240px;
+  padding: clamp(1rem, 4vw, 3.5rem);
+  background: transparent;
+}
+
+.site-page main section {
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.09);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+@supports ((backdrop-filter: blur(18px)) or (-webkit-backdrop-filter: blur(18px))) {
+  .site-page main section {
+    -webkit-backdrop-filter: blur(18px) saturate(120%);
+    backdrop-filter: blur(18px) saturate(120%);
+  }
+}
+
+@supports not ((backdrop-filter: blur(18px)) or (-webkit-backdrop-filter: blur(18px))) {
+  .site-page main section {
+    background: #132943;
+  }
+}
+
+.site-page main h2,
+.site-page main h3 {
+  color: #fff;
+}
+
+.site-page main p,
+.site-page main li,
+.site-page main .lead,
+.site-page main .response-note {
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.site-page main .eyebrow,
+.site-page main .section-meta,
+.site-page main .tool-note {
+  color: #ffb28a !important;
+}
+
+.site-page main a:not(.button),
+.site-page main .section-link {
+  color: #ffc2a1;
+}
+
+.site-page .page-intro,
+.site-page .design-status,
+.site-page .design-notes,
+.site-page .process-section,
+.site-page .contact-form-section,
+.site-page .gallery-section,
+.site-page .design-capabilities {
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.site-page .feature-grid article,
+.site-page .project-card,
+.site-page .service-grid article,
+.site-page .capability-grid article,
+.site-page .process-grid article,
+.site-page .proposal-form,
+.site-page .detail-panel {
+  border-color: rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.site-page .featured-services {
+  background: rgba(255, 255, 255, 0.12) !important;
+}
+
+.site-page .proposal-form label,
+.site-page .proposal-form input,
+.site-page .proposal-form select,
+.site-page .proposal-form textarea {
+  color: #fff;
+}
+
+.site-page .proposal-form input,
+.site-page .proposal-form select,
+.site-page .proposal-form textarea {
+  border-color: rgba(255, 255, 255, 0.28);
+  background: rgba(4, 20, 39, 0.56);
+}
+
+.site-page .proposal-form option {
+  background: #102238;
+  color: #fff;
+}
+
+.site-page .gallery-page .image-grid figure {
+  border-color: rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.site-page .gallery-page .image-grid figcaption {
+  color: #fff;
+}
+
+.site-page .button-secondary {
+  border-color: rgba(255, 255, 255, 0.26);
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+@media (max-width: 800px) {
+  .site-page main {
+    padding: 1rem;
+  }
+}
