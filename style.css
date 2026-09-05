@@ -575,3 +575,123 @@ main a:not(.button) {
     grid-template-columns: 1fr;
   }
 }
+
+.gallery-section,
+.design-capabilities,
+.design-status {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.section-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 0.7fr);
+  align-items: end;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.section-heading h2 {
+  margin-bottom: 0;
+}
+
+.section-heading > p {
+  margin: 0;
+}
+
+.gallery-page .gallery-section {
+  background: var(--panel);
+}
+
+.gallery-page .image-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.gallery-page .image-grid figure {
+  min-width: 0;
+  padding: 0.6rem;
+  border: 1px solid var(--line);
+  background: #fff;
+}
+
+.gallery-page .image-grid img {
+  width: 100%;
+  max-width: none;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+.gallery-page .image-grid figcaption {
+  width: 100%;
+  margin: 0;
+  padding: 0.7rem 0.2rem 0.2rem;
+  color: var(--ink);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-align: left;
+}
+
+.gallery-cta,
+.design-page .cta-band {
+  margin: 0 auto;
+  max-width: 1180px;
+}
+
+.design-capabilities {
+  background: var(--panel);
+}
+
+.capability-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.capability-grid article {
+  min-height: 180px;
+  padding: 1.5rem;
+  border: 1px solid var(--line);
+  background: #fff;
+}
+
+.capability-grid h3 {
+  margin: 1.2rem 0 0.5rem;
+}
+
+.capability-number {
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+}
+
+.design-status {
+  background: #e8eef3;
+}
+
+.design-status h2 {
+  max-width: 650px;
+}
+
+.design-status p:not(.eyebrow) {
+  max-width: 700px;
+}
+
+@media (max-width: 800px) {
+  .section-heading,
+  .capability-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-page .image-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-page .image-grid {
+    grid-template-columns: 1fr;
+  }
+}
