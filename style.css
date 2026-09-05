@@ -319,6 +319,18 @@ header.show-nav {
   --line: rgba(16, 34, 56, 0.14);
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 body {
   background: linear-gradient(135deg, rgba(11, 31, 55, 0.94), rgba(25, 76, 92, 0.82)), url('background.jpg') center / cover fixed;
   color: var(--ink);
@@ -330,6 +342,7 @@ header {
 }
 
 main {
+  width: 100%;
   max-width: 1180px;
   margin: 0 auto;
 }
@@ -363,6 +376,11 @@ main section,
   font-size: clamp(2.4rem, 6vw, 5.5rem);
   line-height: 0.98;
   letter-spacing: -0.04em;
+}
+
+.page-intro {
+  padding-top: clamp(1.75rem, 4vw, 3.5rem) !important;
+  padding-bottom: clamp(1.75rem, 4vw, 3.5rem) !important;
 }
 
 .hero-copy,
