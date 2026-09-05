@@ -1239,3 +1239,282 @@ main a:not(.button) {
     padding: 1rem;
   }
 }
+
+/* Final visual system: readable surfaces, predictable rhythm, and clear contrast. */
+:root {
+  --ink: #142331;
+  --muted: #52616d;
+  --paper: #eef3f2;
+  --surface: #ffffff;
+  --surface-soft: #f5f8f7;
+  --accent: #d96532;
+  --accent-dark: #9d3f1e;
+  --teal: #176b70;
+  --line: #d4dfde;
+  --content-width: 1180px;
+}
+
+body {
+  font-family: "Trebuchet MS", "Gill Sans", sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+body::before {
+  display: none;
+}
+
+header {
+  background: var(--ink);
+  border-bottom: 3px solid var(--accent);
+  color: #fff;
+}
+
+.site-page header,
+.landing-page-body header {
+  background: var(--ink);
+  border-bottom-color: var(--accent);
+}
+
+header h1,
+main h1,
+main h2,
+main h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  letter-spacing: 0;
+}
+
+nav a {
+  border-radius: 4px;
+}
+
+nav a:hover,
+nav a:focus-visible,
+nav a.active {
+  background: var(--teal);
+}
+
+main,
+.site-page main,
+.landing-page {
+  width: min(100%, var(--content-width));
+  max-width: var(--content-width);
+  margin: 0 auto;
+}
+
+main {
+  padding: 0;
+}
+
+main section,
+#home,
+#resume,
+#projects,
+#gallery,
+#designs,
+.site-page main section {
+  margin: 0;
+  padding: clamp(2.75rem, 6vw, 5rem) clamp(1.25rem, 5vw, 4rem);
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  background: var(--surface);
+  box-shadow: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+main section + section {
+  margin-top: 1rem;
+}
+
+.site-page main,
+.landing-page {
+  padding: 1rem 0 3rem;
+}
+
+.site-page,
+.landing-page-body {
+  background:
+    linear-gradient(135deg, rgba(23, 107, 112, 0.08), transparent 34%),
+    linear-gradient(315deg, rgba(217, 101, 50, 0.08), transparent 40%),
+    var(--paper);
+  color: var(--ink);
+}
+
+.site-page main h2,
+.site-page main h3,
+.site-page main p,
+.site-page main li,
+.site-page main .lead,
+.site-page main .response-note,
+.landing-page main h2,
+.landing-page main h3,
+.landing-page main p,
+.landing-page main li {
+  color: var(--ink);
+}
+
+.site-page main p,
+.site-page main li,
+.landing-page main p,
+.landing-page main li {
+  color: var(--muted);
+}
+
+.eyebrow,
+.site-page main .eyebrow,
+.site-page main .section-meta,
+.site-page main .tool-note {
+  color: var(--accent-dark) !important;
+}
+
+.lead {
+  color: var(--muted);
+}
+
+main a:not(.button),
+.section-link,
+.text-link {
+  color: var(--accent-dark);
+}
+
+.button {
+  border-radius: 4px;
+  padding: 0.8rem 1.1rem;
+}
+
+.button-primary {
+  background: var(--accent);
+  color: #fff !important;
+}
+
+.button-primary:hover,
+.button-primary:focus-visible {
+  background: var(--accent-dark);
+}
+
+.button-secondary {
+  border-color: var(--teal);
+  background: transparent;
+  color: var(--teal) !important;
+}
+
+.button-secondary:hover,
+.button-secondary:focus-visible {
+  background: rgba(23, 107, 112, 0.09);
+}
+
+.hero {
+  background: linear-gradient(120deg, #f8fbfa, #dcebea);
+}
+
+.landing-page .intro-band,
+.landing-page .feature-grid,
+.landing-page #projects,
+.landing-page #gallery,
+.landing-page #designs {
+  background: var(--surface);
+  border-color: var(--line);
+}
+
+.hero h2,
+.page-intro h2 {
+  font-size: clamp(2.35rem, 6vw, 5rem);
+  line-height: 1;
+}
+
+.feature-grid article,
+.project-card,
+.service-grid article,
+.capability-grid article,
+.process-grid article,
+.proposal-form,
+.detail-panel {
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--accent);
+  border-radius: 4px;
+  background: var(--surface-soft);
+  box-shadow: none;
+}
+
+.gallery-page .image-grid,
+.capability-grid,
+.project-list,
+.feature-grid,
+.project-grid,
+.service-grid,
+.process-grid {
+  gap: 1.25rem;
+}
+
+.gallery-page .image-grid figure {
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--surface-soft);
+}
+
+.gallery-page .image-grid figcaption {
+  color: var(--ink);
+}
+
+.design-status {
+  background: #dcebea;
+}
+
+.cta-band {
+  background: var(--ink) !important;
+}
+
+.cta-band h2,
+.cta-band p,
+.cta-band .eyebrow {
+  color: #fff !important;
+}
+
+#quick-links-address {
+  margin-top: 1rem;
+  background: var(--ink);
+  color: #fff;
+}
+
+.footer-links a,
+.footer-social a,
+.footer-column address a {
+  color: #d8eeee;
+}
+
+.footer-links a:hover,
+.footer-social a:hover,
+.footer-column address a:hover {
+  color: #ffb28a;
+}
+
+@media (max-width: 800px) {
+  .site-page main,
+  .landing-page {
+    padding: 0 0 1.5rem;
+  }
+
+  main section,
+  #home,
+  #resume,
+  #projects,
+  #gallery,
+  #designs,
+  .site-page main section {
+    padding: 2.5rem 1.25rem;
+  }
+
+  main section + section {
+    margin-top: 0.75rem;
+  }
+
+  .site-page main section {
+    border-radius: 0;
+  }
+
+  nav ul {
+    background: var(--ink);
+  }
+}
