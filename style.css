@@ -1518,3 +1518,170 @@ main a:not(.button),
     background: var(--ink);
   }
 }
+
+/* Landing page liquid-glass presentation. */
+.landing-page-body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 8% 26%, rgba(234, 88, 12, 0.3), transparent 34%),
+    radial-gradient(circle at 90% 12%, rgba(30, 157, 180, 0.3), transparent 38%),
+    radial-gradient(circle at 52% 94%, rgba(53, 96, 166, 0.26), transparent 42%),
+    #071426;
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.landing-page-body header {
+  background: rgba(5, 20, 39, 0.64);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  -webkit-backdrop-filter: blur(16px) saturate(125%);
+  backdrop-filter: blur(16px) saturate(125%);
+}
+
+.landing-page-body nav a:hover,
+.landing-page-body nav a:focus-visible,
+.landing-page-body nav a.active {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.landing-page {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  width: min(100% - 2rem, 1240px);
+  max-width: 1240px;
+  margin: clamp(1rem, 4vw, 3.5rem) auto;
+  padding: clamp(1.25rem, 4vw, 3.5rem);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.14);
+  -webkit-backdrop-filter: blur(20px) saturate(125%);
+  backdrop-filter: blur(20px) saturate(125%);
+}
+
+.landing-page::before {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  content: "";
+  background: linear-gradient(125deg, rgba(255, 255, 255, 0.14), transparent 38%, rgba(255, 255, 255, 0.04));
+  pointer-events: none;
+}
+
+.landing-page > section,
+.landing-page #home,
+.landing-page #resume,
+.landing-page #projects,
+.landing-page #gallery,
+.landing-page #designs {
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.landing-page > section:last-child {
+  border-bottom: 0;
+}
+
+.landing-page .hero {
+  min-height: min(680px, calc(100vh - 190px));
+  grid-template-columns: minmax(0, 1.5fr) minmax(220px, 0.7fr);
+  align-items: center;
+  gap: 3rem;
+  background: transparent;
+}
+
+.landing-page .hero h2,
+.landing-page main h2,
+.landing-page main h3 {
+  color: #fff;
+}
+
+.landing-page main p,
+.landing-page main li,
+.landing-page .lead,
+.landing-page .response-note {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.landing-page .hero .eyebrow,
+.landing-page .eyebrow {
+  color: #ffb28a !important;
+}
+
+.landing-page .hero-meta {
+  align-self: center;
+  padding: 1.35rem;
+  border-left: 1px solid rgba(255, 255, 255, 0.55);
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.landing-page .button-secondary {
+  border-color: rgba(255, 255, 255, 0.26);
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff !important;
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+.landing-page .button-secondary:hover,
+.landing-page .button-secondary:focus-visible {
+  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.landing-page .button-primary {
+  background: #ea580c;
+  box-shadow: 0 12px 28px rgba(234, 88, 12, 0.34);
+}
+
+.landing-page .button-primary:hover,
+.landing-page .button-primary:focus-visible {
+  background: #f97316;
+  box-shadow: 0 14px 34px rgba(234, 88, 12, 0.46);
+}
+
+.landing-page main a:not(.button),
+.landing-page .text-link {
+  color: #ffc2a1;
+}
+
+.landing-page .feature-grid article,
+.landing-page .project-grid article {
+  border-color: rgba(255, 255, 255, 0.16);
+  border-top-color: rgba(255, 178, 138, 0.8);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+@supports not ((backdrop-filter: blur(20px)) or (-webkit-backdrop-filter: blur(20px))) {
+  .landing-page-body header {
+    background: #051427;
+  }
+
+  .landing-page {
+    background: #132943;
+  }
+}
+
+@media (max-width: 800px) {
+  .landing-page {
+    width: min(100% - 1rem, 1240px);
+    margin: 0.5rem auto;
+    padding: 1rem;
+    border-radius: 20px;
+  }
+
+  .landing-page .hero {
+    min-height: auto;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .landing-page .hero-meta {
+    border-top: 1px solid rgba(255, 255, 255, 0.35);
+    border-left: 0;
+  }
+}
