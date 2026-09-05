@@ -59,6 +59,38 @@ nav a.active {
   background: #0055a5;
 }
 
+.top-contact {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-top: 0.75rem;
+  padding: 0 1rem;
+}
+
+.top-contact a {
+  display: inline-block;
+  padding: 0.35rem 0.75rem;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.top-contact-whatsapp {
+  background: #168c4a;
+}
+
+.top-contact-email {
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.top-contact a:hover,
+.top-contact a:focus-visible {
+  filter: brightness(1.15);
+}
+
 .hamburger {
   display: none;
   position: absolute;
@@ -180,6 +212,7 @@ button.hamburger {
 @media screen and (max-width: 768px) {
   header {
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
   }
 
@@ -189,6 +222,12 @@ button.hamburger {
 
   button.hamburger {
     display: block;
+  }
+
+  .top-contact {
+    width: 100%;
+    order: 3;
+    margin-top: 0.5rem;
   }
 }
 
