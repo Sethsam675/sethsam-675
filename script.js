@@ -69,3 +69,26 @@ if (hamburger && navUl) {
     hamburger.setAttribute('aria-expanded', String(isOpen));
   });
 }
+
+const proposalForm = document.querySelector('#proposal-form');
+
+if (proposalForm) {
+  proposalForm.addEventListener('submit', event => {
+    event.preventDefault();
+    const formData = new FormData(proposalForm);
+    const subject = `${formData.get('service')} enquiry from ${formData.get('name')}`;
+    const body = [
+      `Name: ${formData.get('name')}`,
+      `Organization: ${formData.get('organization') || 'Not provided'}`,
+      `Service: ${formData.get('service')}`,
+      `Timeline: ${formData.get('timeline')}`,
+      '',
+      'Message:',
+      formData.get('message')
+    ].join('\n');
+    const status = document.querySelector('#form-status');
+
+    window.location.href = `mailto:sethsam213@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    if (status) status.textContent = 'Your email app should open with the enquiry prepared.';
+  });
+}

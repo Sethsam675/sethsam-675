@@ -45,12 +45,12 @@ Use this checklist in order. Complete the items in each phase before moving to t
 
 ## Phase 5: Improve Contact and Conversion
 
-- [ ] Add a contact form with name, organization, service, message, and timeline fields.
-- [ ] Add a WhatsApp contact link if appropriate.
-- [ ] Display email and phone contact actions near the top of the homepage.
-- [ ] Add a clear response-time message.
-- [ ] Replace generic service descriptions with specific deliverables.
-- [ ] Add a short service-request or proposal process.
+- [x] Add a contact form with name, organization, service, message, and timeline fields.
+- [x] Add a WhatsApp contact link if appropriate.
+- [x] Display email and phone contact actions near the top of the homepage.
+- [x] Add a clear response-time message.
+- [x] Replace generic service descriptions with specific deliverables.
+- [x] Add a short service-request or proposal process.
 
 ## Phase 6: Add Professional Results
 
