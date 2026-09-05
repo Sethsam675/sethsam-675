@@ -566,7 +566,63 @@ main a:not(.button) {
 }
 
 .featured-services {
-  background: #eef3f6 !important;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  max-width: 1040px;
+  margin: 0 auto;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 24px 70px rgba(7, 20, 38, 0.24), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  color: var(--ink);
+}
+
+.services-page {
+  max-width: none;
+  padding: 0 clamp(1rem, 4vw, 3rem) 3rem;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(224, 122, 63, 0.46), transparent 34%),
+    radial-gradient(circle at 86% 20%, rgba(45, 173, 181, 0.42), transparent 36%),
+    radial-gradient(circle at 58% 84%, rgba(79, 97, 210, 0.38), transparent 42%),
+    linear-gradient(135deg, #102238 0%, #17485c 48%, #263878 100%);
+}
+
+.services-page > .page-intro,
+.services-page > .service-grid,
+.services-page > .process-section,
+.services-page > .contact-form-section {
+  max-width: 1180px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.glass-card .section-heading,
+.glass-card .service-grid {
+  position: relative;
+  z-index: 1;
+}
+
+.glass-card::before {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  content: "";
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.24), transparent 42%, rgba(255, 255, 255, 0.08));
+  pointer-events: none;
+}
+
+@supports ((backdrop-filter: blur(18px)) or (-webkit-backdrop-filter: blur(18px))) {
+  .glass-card {
+    -webkit-backdrop-filter: blur(18px) saturate(120%);
+    backdrop-filter: blur(18px) saturate(120%);
+  }
+}
+
+@supports not ((backdrop-filter: blur(18px)) or (-webkit-backdrop-filter: blur(18px))) {
+  .glass-card {
+    background: #e8eef3 !important;
+  }
 }
 
 .service-number {
