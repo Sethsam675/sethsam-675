@@ -1,57 +1,71 @@
-document.querySelectorAll('.lightbox').forEach(link => {
-    link.addEventListener('click', e => {
-      e.preventDefault();
-      const imgSrc = link.href;
-      const lightboxDiv = document.createElement('div');
-      lightboxDiv.className = 'lightbox-modal';
-      lightboxDiv.innerHTML = `<img src="${imgSrc}" alt=""><span class="close">&times;</span>`;
-      document.body.appendChild(lightboxDiv);
+const lightboxLinks = document.querySelectorAll('.lightbox');
 
-      lightboxDiv.querySelector('.close').onclick = () => {
-        document.body.removeChild(lightboxDiv);
-      };
+lightboxLinks.forEach(link => {
+  link.addEventListener('click', event => {
+    event.preventDefault();
+
+    const lightbox = document.createElement('div');
+    const image = document.createElement('img');
+    const closeButton = document.createElement('button');
+
+    lightbox.className = 'lightbox-modal';
+    lightbox.setAttribute('role', 'dialog');
+    lightbox.setAttribute('aria-modal', 'true');
+    image.src = link.href;
+    image.alt = link.querySelector('img')?.alt || 'Enlarged portfolio image';
+    closeButton.className = 'close';
+    closeButton.type = 'button';
+    closeButton.setAttribute('aria-label', 'Close image');
+    closeButton.textContent = '×';
+
+    lightbox.append(image, closeButton);
+    document.body.appendChild(lightbox);
+    closeButton.focus();
+
+    const handleKeydown = event => {
+      if (event.key === 'Escape') closeLightbox();
+    };
+
+    const closeLightbox = () => {
+      lightbox.remove();
+      document.body.style.overflow = '';
+      document.removeEventListener('keydown', handleKeydown);
+    };
+
+    closeButton.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', event => {
+      if (event.target === lightbox) closeLightbox();
     });
+    document.addEventListener('keydown', handleKeydown);
+    document.body.style.overflow = 'hidden';
   });
+});
 
-  // Duplicate hamburger and navUl declaration removed
+let lastScrollY = window.scrollY;
+const header = document.querySelector('header');
 
-  let lastScrollY = window.scrollY;
-  const header = document.querySelector('header');
-
+if (header) {
   window.addEventListener('scroll', () => {
-    if (!header) return;
     if (window.scrollY > lastScrollY && window.scrollY > 80) {
-      // Scrolling down
       header.classList.add('hide-nav');
       header.classList.remove('show-nav');
     } else {
-      // Scrolling up
       header.classList.remove('hide-nav');
       header.classList.add('show-nav');
     }
     lastScrollY = window.scrollY;
   });
 
-  // Ensure header is visible on page load
   header.classList.add('show-nav');
+}
 
-  document.querySelectorAll('.lightbox').forEach(link => {
-    link.addEventListener('click', e => {
-      e.preventDefault();
-      const imgSrc = link.href;
-      const lightboxDiv = document.createElement('div');
-      lightboxDiv.className = 'lightbox-modal';
-      lightboxDiv.innerHTML = `<img src="${imgSrc}" alt=""><span class="close">&times;</span>`;
-      document.body.appendChild(lightboxDiv);
+const hamburger = document.querySelector('.hamburger');
+const navUl = document.querySelector('nav ul');
 
-      lightboxDiv.querySelector('.close').onclick = () => {
-        document.body.removeChild(lightboxDiv);
-      };
-    });
-  });
-
-  const hamburger = document.querySelector('.hamburger');
-  const navUl = document.querySelector('nav ul');
+if (hamburger && navUl) {
+  hamburger.setAttribute('aria-expanded', 'false');
   hamburger.addEventListener('click', () => {
-    navUl.classList.toggle('open');
+    const isOpen = navUl.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', String(isOpen));
   });
+}
