@@ -477,6 +477,18 @@ main a:not(.button) {
   background: rgba(255, 255, 255, 0.7);
 }
 
+.featured-services {
+  background: #eef3f6 !important;
+}
+
+.service-number {
+  margin: 0;
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+}
+
 .feature-grid h2,
 .project-card h2,
 .service-grid h3 {
