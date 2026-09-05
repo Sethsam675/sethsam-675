@@ -35,13 +35,13 @@ Use this checklist in order. Complete the items in each phase before moving to t
 
 ## Phase 4: Improve Search and Sharing
 
-- [ ] Add a unique meta description to every page.
-- [ ] Add a favicon.
-- [ ] Add Open Graph title, description, and image tags.
-- [ ] Create a `sitemap.xml` file.
-- [ ] Add a `robots.txt` file if the site is published publicly.
-- [ ] Confirm that every page has one clear `<h1>`.
-- [ ] Check that page titles accurately describe their content.
+- [x] Add a unique meta description to every page.
+- [x] Add a favicon.
+- [x] Add Open Graph title, description, and image tags.
+- [x] Create a `sitemap.xml` file.
+- [x] Add a `robots.txt` file if the site is published publicly.
+- [x] Confirm that every page has one clear `<h1>`.
+- [x] Check that page titles accurately describe their content.
 
 ## Phase 5: Improve Contact and Conversion
 

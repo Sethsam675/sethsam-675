@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sethsam675.github.io/sethsam-675/sitemap.xml
