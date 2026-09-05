@@ -797,6 +797,14 @@ main a:not(.button) {
   text-decoration: underline;
 }
 
+.section-meta,
+.tool-note {
+  margin: 0.4rem 0 0;
+  color: var(--accent-dark) !important;
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
 .gallery-page .gallery-section {
   background: var(--panel);
 }
@@ -875,6 +883,15 @@ main a:not(.button) {
 
 .design-status p:not(.eyebrow) {
   max-width: 700px;
+}
+
+.design-notes {
+  background: var(--panel);
+}
+
+.design-notes h2,
+.design-notes p:not(.eyebrow) {
+  max-width: 720px;
 }
 
 @media (max-width: 800px) {

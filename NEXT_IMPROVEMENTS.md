@@ -15,12 +15,12 @@ Use this checklist in order. Complete the items in each phase before moving to t
 
 ## Phase 2: Improve Gallery and Design Pages
 
-- [ ] Add project titles instead of repeated captions.
-- [ ] Add project dates where useful.
-- [ ] Add tools used, such as Photoshop, Illustrator, XD, or video software.
-- [ ] Add a short explanation below each design or gallery category.
-- [ ] Add a contact link below the gallery and design sections.
-- [ ] Check every image on mobile and desktop screens.
+- [x] Add project titles instead of repeated captions.
+- [x] Add project dates where useful.
+- [x] Add tools used, such as Photoshop, Illustrator, XD, or video software.
+- [x] Add a short explanation below each design or gallery category.
+- [x] Add a contact link below the gallery and design sections.
+- [x] Check every image on mobile and desktop screens.
 
 ## Phase 3: Improve Accessibility and Structure
 
