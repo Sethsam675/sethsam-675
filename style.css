@@ -1105,6 +1105,204 @@ main a:not(.button) {
   }
 }
 
+/* Shared liquid-glass presentation for every inner page. */
+.site-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 8% 26%, rgba(234, 88, 12, 0.3), transparent 34%),
+    radial-gradient(circle at 90% 12%, rgba(30, 157, 180, 0.3), transparent 38%),
+    radial-gradient(circle at 52% 94%, rgba(53, 96, 166, 0.26), transparent 42%),
+    #071426;
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.site-page header {
+  background: rgba(5, 20, 39, 0.64);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  -webkit-backdrop-filter: blur(16px) saturate(125%);
+  backdrop-filter: blur(16px) saturate(125%);
+}
+
+.site-page nav a:hover,
+.site-page nav a:focus-visible,
+.site-page nav a.active {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.site-page main {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  width: min(100% - 2rem, 1240px);
+  max-width: 1240px;
+  margin: clamp(1rem, 4vw, 3.5rem) auto;
+  padding: clamp(1.25rem, 4vw, 3.5rem);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.14);
+  -webkit-backdrop-filter: blur(20px) saturate(125%);
+  backdrop-filter: blur(20px) saturate(125%);
+}
+
+.site-page main::before {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  content: "";
+  background: linear-gradient(125deg, rgba(255, 255, 255, 0.14), transparent 38%, rgba(255, 255, 255, 0.04));
+  pointer-events: none;
+}
+
+.site-page main > section,
+.site-page main > .resume-layout,
+.site-page main .resume-layout section {
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.site-page main > section:last-child,
+.site-page main .resume-layout section:last-child {
+  border-bottom: 0;
+}
+
+.site-page main h2,
+.site-page main h3 {
+  color: #fff;
+}
+
+.site-page main p,
+.site-page main li,
+.site-page main .lead,
+.site-page main .response-note,
+.site-page main .section-heading > p {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.site-page main .eyebrow,
+.site-page main .section-meta,
+.site-page main .tool-note,
+.site-page main .date,
+.site-page main .service-number,
+.site-page main .capability-number {
+  color: #ffb28a !important;
+}
+
+.site-page main a:not(.button),
+.site-page main .section-link,
+.site-page main .text-link {
+  color: #ffc2a1;
+}
+
+.site-page .feature-grid article,
+.site-page .project-card,
+.site-page .service-grid article,
+.site-page .capability-grid article,
+.site-page .process-grid article,
+.site-page .proposal-form,
+.site-page .detail-panel,
+.site-page .gallery-page .image-grid figure {
+  border-color: rgba(255, 255, 255, 0.16);
+  border-top-color: rgba(255, 178, 138, 0.8);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.site-page .gallery-page .image-grid figure {
+  border-top-width: 1px;
+}
+
+.site-page .gallery-page .image-grid figcaption {
+  color: #fff;
+}
+
+.site-page .tag-row span,
+.site-page .skill-list span {
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.site-page .button-secondary {
+  border-color: rgba(255, 255, 255, 0.26);
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff !important;
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+.site-page .button-secondary:hover,
+.site-page .button-secondary:focus-visible {
+  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.site-page .button-primary {
+  background: #ea580c;
+  box-shadow: 0 12px 28px rgba(234, 88, 12, 0.34);
+}
+
+.site-page .button-primary:hover,
+.site-page .button-primary:focus-visible {
+  background: #f97316;
+  box-shadow: 0 14px 34px rgba(234, 88, 12, 0.46);
+}
+
+.site-page .proposal-form input,
+.site-page .proposal-form select,
+.site-page .proposal-form textarea {
+  border-color: rgba(255, 255, 255, 0.28);
+  background: rgba(4, 20, 39, 0.56);
+  color: #fff;
+}
+
+.site-page .proposal-form label {
+  color: #fff;
+}
+
+.site-page .proposal-form option {
+  background: #102238;
+  color: #fff;
+}
+
+.site-page .cta-band {
+  background: rgba(5, 20, 39, 0.7) !important;
+}
+
+.site-page .cta-band h2,
+.site-page .cta-band p,
+.site-page .cta-band .eyebrow {
+  color: #fff !important;
+}
+
+.site-page .featured-services {
+  background: rgba(255, 255, 255, 0.12) !important;
+}
+
+@supports not ((backdrop-filter: blur(20px)) or (-webkit-backdrop-filter: blur(20px))) {
+  .site-page header {
+    background: #051427;
+  }
+
+  .site-page main {
+    background: #132943;
+  }
+}
+
+@media (max-width: 800px) {
+  .site-page main {
+    width: min(100% - 1rem, 1240px);
+    margin: 0.5rem auto;
+    padding: 1rem;
+    border-radius: 20px;
+  }
+}
+
 /* Shared dark liquid-glass theme for the inner portfolio pages */
 .site-page {
   min-height: 100vh;
