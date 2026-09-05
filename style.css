@@ -91,6 +91,23 @@ nav a.active {
   filter: brightness(1.15);
 }
 
+header .top-contact a.top-contact-whatsapp,
+header .top-contact a.top-contact-email {
+  box-sizing: border-box;
+  text-decoration: none !important;
+  color: #fff !important;
+  line-height: 1.2;
+}
+
+header .top-contact a.top-contact-whatsapp {
+  background: #168c4a !important;
+}
+
+header .top-contact a.top-contact-email {
+  background: transparent !important;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
 .hamburger {
   display: none;
   position: absolute;
